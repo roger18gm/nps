@@ -1,6 +1,6 @@
 # WDD 231 personal project
 
-https://678082cb1ad8e3d7455ef83d--neon-arithmetic-c55dab.netlify.app/
+https://6781f632d572810008dae13e--neon-arithmetic-c55dab.netlify.app/
 
 ## Description
 

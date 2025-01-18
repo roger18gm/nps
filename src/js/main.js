@@ -1,28 +1,26 @@
-import { getParkData } from "./parkService.mjs";
+import { getParkData, parkInfoLinks } from "./parkService.mjs";
+import { mediaCardTemplate } from "./templates.mjs";
+import { setHeaderFooter } from "./setHeaderFooter.mjs";
 
 const parkData = getParkData();
 
-const title = document.querySelector("title");
-title.innerHTML = parkData.fullName
-
-const disclaimer = document.querySelector(".disclaimer > a");
-disclaimer.href = parkData.url;
-disclaimer.innerHTML = parkData.fullName;
-
-function parkInfoTemplate(info) {
-
-    return `<a href = "/" class="hero-banner-title">${info.name}</a>
-            <p class="hero-banner-subtitle"> 
-              <span>${info.designation}</span>
-              <span>${info.states}</span>
-            </p>
-    `;
+const setParkIntro = (data) => {
+  const introSection = document.querySelector(".intro");
+  introSection.innerHTML = `<h1>${data.fullName}</h1>
+                            <p>${data.description}</p>`
 }
-const heroBanner = document.querySelector(".hero-banner-content");
-heroBanner.innerHTML = parkInfoTemplate(parkData);
 
-const parkImage = document.querySelector(".hero-banner > img")
-parkImage.src = parkData.images.at(0).url;
-parkImage.alt = parkData.images.at(0).altText;
+const setParkInfoLinks = (data) => {
+  // Add media cards dynamically with map method
+  const infoSection = document.querySelector(".info");
+  const mediaCards = data.map(mediaCardTemplate);
+
+  // mediaCards.join("") eliminates the comma after every element
+  infoSection.insertAdjacentHTML("afterbegin",mediaCards.join(""));
+}
 
 
+// Function Calls
+setParkIntro(parkData);
+setParkInfoLinks(parkInfoLinks);
+setHeaderFooter(parkData)

@@ -266,6 +266,71 @@ svg {
   width: 24px;
   height: 24px;
 }
+
+
+/* BODY STYLING STARTS HERE */
+main {
+  margin: 50px 20px;
+}
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.intro h1 {
+  font-family:var(--bs-font-serif);
+  font-size: 2rem;
+}
+.info img {
+  width: 100%;
+  height: 300px;
+}
+
+.media-card{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 40px;
+}
+.media-card p, .contact p {
+  font-size: 1rem;
+  margin-top: 0;
+}
+.media-card__title {
+  color: var(--bs-black);
+  font-weight:bolder;
+  font-family: var(--bs-font-sans-serif);
+}
+
+
+/* FOOTER STYLING STARTS HERE */
+
+#park-footer {  
+  display:grid;
+}
+footer img {
+  width: 100%;
+  z-index: -1;
+  grid-column: 1/2;
+  grid-row:1/2;
+
+}
+.contact {
+  z-index: 1;
+  grid-column:1/2;
+  grid-row:1/2;
+  margin: 20px 30px;
+}
+.contact h3 {
+  font-family: var(--bs-font-serif);
+  text-transform: uppercase;
+}
+.contact h4 {
+  /* font-weight: bolder; */
+  font-weight:800;
+}
+
 @media screen and (max-width: 480px) {
   .global-header h1{
     font-size: 1rem;
@@ -279,6 +344,21 @@ svg {
   }
   .park-nav a {
     padding: 3em;
+  }
+  .info {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items:baseline;
+  }
+  .intro, .media-card {
+    margin: 0px 20px;
+
+  }
+  .media-card p {
+    margin-bottom: 0;
+  }
+  img {
+    max-height: 400px;
   }
 
 }
