@@ -1,0 +1,25 @@
+/* FOOTER STYLING STARTS HERE */
+
+#park-footer {  
+    display:grid;
+  }
+  footer img {
+    width: 100%;
+    z-index: -1;
+    grid-column: 1/2;
+    grid-row:1/2;
+  
+  }
+  .contact {
+    z-index: 1;
+    grid-column:1/2;
+    grid-row:1/2;
+    margin: 20px 30px;
+  }
+  .contact h3 {
+    font-family: var(--bs-font-serif);
+    text-transform: uppercase;
+  }
+  .contact h4 {
+    font-weight:800;
+  }
