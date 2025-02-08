@@ -1,14 +1,15 @@
-import { getInfoLinks, getParkData, parkInfoLinks } from "./parkService.mjs";
+import { getInfoLinks, getParkData } from "./parkService.mjs";
 import { mediaCardTemplate } from "./templates.mjs";
 import { setHeaderFooter } from "./setHeaderFooter.mjs";
+import "../css/home.css";
 
 const init = async () => {
   const parkData = await getParkData();
   const links = getInfoLinks(parkData.images);
   // Function Calls
-  setParkIntro(parkData);
-  setParkInfoLinks(parkInfoLinks);
   setHeaderFooter(parkData);
+  setParkIntro(parkData);
+  setParkInfoLinks(links);
 }
 
 const setParkIntro = (data) => {
@@ -25,6 +26,8 @@ const setParkInfoLinks = (data) => {
   // mediaCards.join("") eliminates the comma after every element
   infoSection.insertAdjacentHTML("afterbegin",mediaCards.join(""));
 }
+
+
 
 init();
 
