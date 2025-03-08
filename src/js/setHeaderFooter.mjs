@@ -1,3 +1,4 @@
+import { enableNavigation, toggleNavSubMenus } from "./navigation.mjs";
 import { parkInfoTemplate, footerTemplate } from "./templates.mjs";
 
 // Update Header Data
@@ -30,4 +31,6 @@ const setFooterInfo = (data) => {
 export const setHeaderFooter = (data) => {
     setHeaderInfo(data);
     setFooterInfo(data);
+    enableNavigation();
+    toggleNavSubMenus();
   }

@@ -6,6 +6,7 @@
 .global-header .icon {
   width: 20px;
   height: 20px;
+  /* transition: all 0.5s; */
 }
 .global-header__right {
   display: flex;
@@ -15,6 +16,9 @@
   padding: 0 1rem;
   margin-top: 6px;
 }
+
+/* GLOBAL NAVIGATION SECTION, ACCORDION, SUB MENU */
+
 #global-nav-toggle {
   background: none;
   border: none;
@@ -34,7 +38,14 @@
   max-height: 0;
   overflow: hidden;
   transition: all 0.5s;
-  
+}
+.global-nav a {
+  color: var(--bs-white);
+  padding-left: 1rem;
+}
+.global-nav__list {
+  list-style: none;
+  padding-left: 0rem;
 }
 .global-nav button {
   background-color: transparent;
@@ -42,6 +53,10 @@
   padding: 1rem;
   gap: 5px;
   cursor: pointer;
+}
+.global-nav__section-heading {
+  color: var(--bs-cerulean);
+  padding-left: 1rem;
 }
 .global-nav__toggle--closed {
   display: flex;
@@ -59,6 +74,33 @@
 }
 .global-nav.show {
   max-height: 1000px;
+}
+.global-nav__split-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--bs-pablo-2);
+}
+.global-nav__submenu {
+  /* display:none; */
+  max-height: 0;
+  overflow: hidden;
+  list-style: none;
+  padding-left: 0;
+  transition: all 0.5s;
+}
+.global-nav__submenu.show {
+  max-height: 500px;
+}
+.global-nav__submenu li{
+  padding: 1rem 0 1rem 0;
+  font-size: 1rem;
+}
+.global-nav__split-button .icon {
+  transition: all 0.3s;
+}
+.global-nav__split-button .icon.rotate {
+  transform: rotate(180deg);
 }
 /* Title and logo styling */
 .site-title {
@@ -81,4 +123,32 @@
   border-top: 34px solid var(--bs-light-green);
   border-left: 13px solid transparent;
   border-right: 13px solid transparent;
+}
+
+@media screen and (min-width: 800px) {
+  
+  .global-nav__list:first-of-type,
+  .global-nav__section-heading {
+    display: none;
+  }
+  /* .global-nav__submenu, */
+  .global-nav__list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  .global-nav__split-button__toggle {
+    display: none;
+  }
+  .global-nav__submenu{
+    display: flex;
+    flex-direction: column;
+    max-height: fit-content;
+  }
+  .global-nav__submenu a {
+    padding: 1.625rem;
+  }
+  .global-nav__submenu li:hover{
+    text-decoration: underline;
+  }
 }

@@ -11,7 +11,7 @@ const init = async () => {
   setParkIntro(parkData);
   setParkInfoLinks(links);
 
-  enableNavigation();
+  // enableNavigation();
 }
 
 const setParkIntro = (data) => {
@@ -28,26 +28,6 @@ const setParkInfoLinks = (data) => {
   // mediaCards.join("") eliminates the comma after every element
   infoSection.insertAdjacentHTML("afterbegin",mediaCards.join(""));
 }
-
-const enableNavigation = () => {
-  const menuButton = document.querySelector("#global-nav-toggle");
-
-  menuButton.addEventListener("click", (event) => {
-    let target = event.target;
-    document.querySelector(".global-nav").classList.toggle("show");
-
-    if (target.tagName !== "BUTTON") {
-      target = target.closest("button");
-    } 
-    
-    if (document.querySelector(".global-nav").classList.contains("show")) {
-      target.setAttribute("aria-expanded", true); 
-    } else {
-      target.setAttribute("aria-expanded", false); 
-    }
-  })
-}
-
 
 init();
 
