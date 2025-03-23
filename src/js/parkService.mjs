@@ -223,6 +223,11 @@ export const getInfoLinks = (data) => {
   return parkImgLinks;
 }
 
+export const getParkVisitorCenterDetails = async (id) => {
+  const parkVisitorCenterDetails = await getJson(`visitorcenters?id=${id}`);
+  return parkVisitorCenterDetails.data[0];
+}
+
 export const parkInfoLinks = [
   {
     name: "Current Conditions &#x203A;",
